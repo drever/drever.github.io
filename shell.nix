@@ -3,8 +3,16 @@ let
 in
 pkgs.mkShell {
   buildInputs = [
-    pkgs.haskellPackages.hakyll
-    pkgs.cabal-install
+    # Haskell Toolchain
     pkgs.ghc
+    pkgs.cabal-install
+    
+    # Hakyll (optional hier, wenn du es via Cabal baust, 
+    # aber nützlich für die globale Verfügbarkeit)
+    pkgs.haskellPackages.hakyll 
+
+    # C-Abhängigkeiten und Build-Tools für Cabal
+    pkgs.zlib
+    pkgs.pkg-config
   ];
 }
