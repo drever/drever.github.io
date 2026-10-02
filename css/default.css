@@ -1,141 +1,83 @@
-html {
-  font-size: 62.5%;
-}
+/* Importiert 'Playfair Display' und 'Lora' */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600&display=swap');
 
 body {
-  font-size: 1.6rem;
-  color: #000;
+    /* Ein sehr subtiler, warmer Gelbstich (Altpapier/Elfenbein) */
+    background-color: #fdfaf0; 
+    
+    /* Der graue Noise-Filter bleibt, dunkelt das Gelb minimal ab und gibt Textur */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+    
+    color: #1a1a1a;
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-header {
-  border-bottom: 0.2rem solid #000;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #111;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-nav {
-  text-align: right;
+/* 
+  Tabellen-Styling (Der Infokasten):
+  Setzt sich durch den kühlen Türkis-Schleier vom warmen Hintergrund ab.
+*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3rem 0;
+    
+    /* Strenge obere und untere Kante */
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    
+    /* Der starke Wiederkennungswert: Eine markante Kante in deinem Türkis */
+    border-left: 4px solid #00d9ff; 
+    
+    /* Das Türkis (#00d9ff) mit 5% Deckkraft. Es legt sich über das Gelb. */
+    background-color: rgba(0, 217, 255, 0.05); 
 }
 
-nav a {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-  text-transform: uppercase;
+td {
+    padding: 1.5rem 1.2rem;
+    vertical-align: top;
 }
 
-footer {
-  margin-top: 3rem;
-  padding: 1.2rem 0;
-  border-top: 0.2rem solid #000;
-  font-size: 1.2rem;
-  color: #555;
+/* Linke Spalte (Der Titel/Name) */
+td:first-child {
+    width: 35%;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    /* Eine sanftere Linie, die den türkisen Touch subtil aufgreift */
+    border-right: 1px dotted rgba(0, 217, 255, 0.4);
 }
 
-h1 {
-  font-size: 2.4rem;
+/* Rechte Spalte (Der Textkörper) */
+td:last-child {
+    width: 65%;
+    color: #2c2c2c;
+    font-size: 0.95rem;
 }
 
-h2 {
-  font-size: 2rem;
+/* 
+  Zusätzlicher Touch: Links im Fließtext erhalten ebenfalls das Türkis, 
+  was das Farbkonzept über die ganze Seite hinweg zusammenhält.
+*/
+a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #00d9ff;
+    transition: background-color 0.2s ease;
 }
 
-article .header {
-  font-size: 1.4rem;
-  font-style: italic;
-  color: #555;
-}
-
-.logo a {
-  font-weight: bold;
-  color: #000;
-  text-decoration: none;
-}
-
-@media (max-width: 319px) {
-  body {
-    width: 90%;
-    margin: 0;
-    padding: 0 5%;
-  }
-  header {
-    margin: 4.2rem 0;
-  }
-  nav {
-    margin: 0 auto 3rem;
-    text-align: center;
-  }
-  footer {
-    text-align: center;
-  }
-  .logo {
-    text-align: center;
-    margin: 1rem auto 3rem;
-  }
-  .logo a {
-    font-size: 2.4rem;
-  }
-  nav a {
-    display: block;
-    line-height: 1.6;
-  }
-}
-
-@media (min-width: 320px) {
-  body {
-    width: 90%;
-    margin: 0;
-    padding: 0 5%;
-  }
-  header {
-    margin: 4.2rem 0;
-  }
-  nav {
-    margin: 0 auto 3rem;
-    text-align: center;
-  }
-  footer {
-    text-align: center;
-  }
-  .logo {
-    text-align: center;
-    margin: 1rem auto 3rem;
-  }
-  .logo a {
-    font-size: 2.4rem;
-  }
-  nav a {
-    display: inline;
-    margin: 0 0.6rem;
-  }
-}
-
-@media (min-width: 640px) {
-  body {
-    width: 60rem;
-    margin: 0 auto;
-    padding: 0;
-  }
-  header {
-    margin: 0 0 3rem;
-    padding: 1.2rem 0;
-  }
-  nav {
-    margin: 0;
-    text-align: right;
-  }
-  nav a {
-    margin: 0 0 0 1.2rem;
-    display: inline;
-  }
-  footer {
-    text-align: right;
-  }
-  .logo {
-    margin: 0;
-    text-align: left;
-  }
-  .logo a {
-    float: left;
-    font-size: 1.8rem;
-  }
+a:hover {
+    background-color: rgba(0, 217, 255, 0.15);
 }
