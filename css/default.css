@@ -81,3 +81,45 @@ a {
 a:hover {
     background-color: rgba(0, 217, 255, 0.15);
 }
+
+/* Der Container für Social Media Posts im Maschinenraum-Design */
+.social-embed {
+    margin: 3rem 0;
+    padding: 1rem 1.2rem;
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    border-left: 4px solid #00d9ff;
+    background-color: rgba(0, 217, 255, 0.05);
+    overflow: hidden;
+}
+
+/* Der Blend-Trick: Macht das Weiß der fremden Plattformen unsichtbar */
+.social-embed iframe,
+.social-embed twitter-widget,
+.social-embed .bluesky-embed,
+.social-embed blockquote {
+    mix-blend-mode: multiply;
+    margin: 0 auto !important;
+}
+
+/* Verhindert, dass die Plattformen das Layout sprengen */
+.social-embed .twitter-tweet {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Der Blend-Trick: Macht das Weiß der fremden Plattformen unsichtbar */
+.social-embed iframe,
+.social-embed twitter-widget,
+.social-embed .bluesky-embed,
+.social-embed blockquote {
+    mix-blend-mode: multiply;
+    margin: 0 auto !important;
+
+    /* Schneidet 2px ab UND rundet die Maske mit 12px (dem Bluesky-Standard) ab */
+    clip-path: inset(8px round 12px);
+
+    /* Sicherheitshalber: Unterdrückt Standard-Rahmen */
+    border: none !important;
+    box-shadow: none !important;
+}

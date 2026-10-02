@@ -6,7 +6,11 @@ tags: song
 description: Ein Song, den Ernst für mich geschrieben hat.
 ---
 
+
+<div class="social-embed"> .
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:36yic5pyxnoiukmegewlvaml/app.bsky.feed.post/3mwdjt2tvf22l" data-bluesky-cid="bafyreiay2yi22zftatgx3dftjtjsni7gyfqnckyxqhokxaoztvenkkiufe" data-bluesky-embed-color-mode="system"><p lang="de">Ernst hat mir ein Lied geschrieben, das sollte ich vortragen.<br><br><a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml/post/3mwdjt2tvf22l?ref_src=embed">[image or embed]</a></p>&mdash; Johannes Drever 🌫️➰💎 (<a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml?ref_src=embed">@comandingo.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml/post/3mwdjt2tvf22l?ref_src=embed">September 25, 2026 at 12:11 PM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+</div>
+
 # Die Akkorde
 
 Spiele das im Kreis. Konstant, stetig. Am – C – G – Em  

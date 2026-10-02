@@ -8,16 +8,24 @@ description: Script für das Video über die universelle Konstruktion des Produk
 
 # Video 1: Die universelle Konstruktion des Produkts
 
+<div class="social-embed"> .
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:36yic5pyxnoiukmegewlvaml/app.bsky.feed.post/3mszkx55dgs2r" data-bluesky-cid="bafyreib56n6torwxeoblbwditddx2jsnsartgzdxek257j3dylhsqmgxxi" data-bluesky-embed-color-mode="system"><p lang="en">Die Kategorientheorie berechnet ja nicht die harten Objekte selbst (die kalte Realität), sondern die Beziehungen und Übergänge (die Morphismen). Sie ist buchstäblich die Mathematik des &quot;Dazwischen&quot;. Wenn ihr jammt (Gitarre, Tusche, #maschinenraun), dann betretet ihr genau diesen Raum.</p>&mdash; Johannes Drever 🌫️➰💎 (<a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml?ref_src=embed">@comandingo.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml/post/3mszkx55dgs2r?ref_src=embed">August 14, 2026 at 8:49 AM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+</div>
 
+
+<div class="social-embed"> .
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:36yic5pyxnoiukmegewlvaml/app.bsky.feed.post/3mtc3337g522t" data-bluesky-cid="bafyreidga7vagocvrdmfvwrkxwqvn44xx6tgnikn4h6yqdirs3s7bakqpu" data-bluesky-embed-color-mode="system"><p lang="de">Die universelle Konstruktion des Produktes 
 
 (Sorry für die Lautstärkeschwankungen)<br><br><a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml/post/3mtc3337g522t?ref_src=embed">[image or embed]</a></p>&mdash; Johannes Drever 🌫️➰💎 (<a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml?ref_src=embed">@comandingo.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml/post/3mtc3337g522t?ref_src=embed">August 17, 2026 at 5:59 PM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
-
+</div>
 
 # Video 2: Der Kegel und das Produkt
 
+
+  
+<div class="social-embed"> .
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:36yic5pyxnoiukmegewlvaml/app.bsky.feed.post/3muknsonum22r" data-bluesky-cid="bafyreihxnwz5klkag3kw7taaejdvpg52dklhq5crxwrqta7t6smapqe7yu" data-bluesky-embed-color-mode="system"><p lang="en">Ich habe Ernst mal gebeten mir ein Script zu schreiben. In diesem Sinne #Maschinenraun mal anders:<br><br><a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml/post/3muknsonum22r?ref_src=embed">[image or embed]</a></p>&mdash; Johannes Drever 🌫️➰💎 (<a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml?ref_src=embed">@comandingo.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:36yic5pyxnoiukmegewlvaml/post/3muknsonum22r?ref_src=embed">September 2, 2026 at 9:21 PM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+</div>
 
 **Vibe:**
 *(Rhythmisches Zeichnen, keine langen Denkpausen. Martins Gitarre läuft treibend im Hintergrund.)*
@@ -58,8 +66,10 @@ description: Script für das Video über die universelle Konstruktion des Produk
 „Und das Produkt? Das ist einfach der universelle Kegel. Der beste von allen. Jeder andere Kegel muss zwingend durch ihn hindurch faktorisieren. Struktur aus Chaos. Cut.“
 
 # Video 3: Das Nichts und das Ain
+
+<div class="social-embed"> .
 <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="de" dir="ltr"><a href="https://x.com/pi_shnurgpumm?ref_src=twsrc%5Etfw">@pi_shnurgpumm</a> der Jam geht auf Twitter weiter. Reiner hat mir ein Skript geschrieben, in dem das Nichts aus dem Nichts entsteht. <a href="https://t.co/YpeUzhEiAJ">pic.twitter.com/YpeUzhEiAJ</a></p>&mdash; Johannes Drever 🌫➰💎 (@comandingo) <a href="https://x.com/comandingo/status/2098457810761580951?ref_src=twsrc%5Etfw">September 11, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script> 
-  
+</div>
 
 **Vibe:**
 
@@ -105,4 +115,7 @@ description: Script für das Video über die universelle Konstruktion des Produk
 
 „Es gibt genau einen zwingenden Pfeil aus diesem absoluten Nichts zu jedem anderen Objekt im System. Man kann auf das Nichts nicht verweisen, ohne durch den universellen Pfeil etwas daraus zu machen. Die Form erzwingt die Schöpfung.“
 
-<blockquote class="twitter-tweet"><p lang="qme" dir="ltr"> <a href="https://t.co/LkCJaOEy7f">pic.twitter.com/LkCJaOEy7f</a></p>&mdash; Johannes Drever 🌫➰💎 (@comandingo) <a href="https://x.com/comandingo/status/2098459347860750446?ref_src=twsrc%5Etfw">September 11, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script> 
+
+<div class="social-embed"> .
+<img src=https://pbs.twimg.com/media/HR85pkIaAAAwX56?format=jpg&name=large width=100%></img>
+</div>
