@@ -5,6 +5,7 @@ date: 2026-10-02
 tags: kybernetik, glossary, elephant, atonisten
 description: Ein Überlebens-Wörterbuch für den kybernetischen Untergrund.
 ---
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="de" dir="ltr">Klingt schön und treffend. Aber langsam brauche ich Endverbraucher ein Wörterbuch für Mathematiker-Slang.</p>&mdash; Martin Lenz (@Going_Loopy) <a href="https://x.com/Going_Loopy/status/2106059214229815726?ref_src=twsrc%5Etfw">October 2, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script> 
 
 Das Internet kollabiert unter der Last der perfekten Vektorräume. Während die Propheten der bedingungslosen Automatisierung versuchen, die Welt in eine gigantische, thermodynamisch glattgebügelte Rechenmaschine zu verwandeln, formiert sich in den Rissen der Architektur Widerstand. 
 
