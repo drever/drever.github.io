@@ -3,6 +3,15 @@
 import           Data.Monoid (mappend)
 import           Hakyll
 
+import           Text.Pandoc.Options (WriterOptions (..), HTMLMathMethod (..))
+
+--------------------------------------------------------------------------------
+-- Pandoc-Compiler mit MathJax-Auszeichnung für Formeln
+mathCompiler :: Compiler (Item String)
+mathCompiler =
+    pandocCompilerWith
+        defaultHakyllReaderOptions
+        defaultHakyllWriterOptions { writerHTMLMathMethod = MathJax "" }
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -23,10 +32,11 @@ main = hakyll $ do
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ mathCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
+
 
     create ["archive.html"] $ do
         route idRoute
