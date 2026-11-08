@@ -4,18 +4,35 @@ import           Data.Monoid (mappend)
 import           Hakyll
 
 import           Text.Pandoc.Options (WriterOptions (..), HTMLMathMethod (..))
+import           Skylighting.Types (SyntaxMap)
+import           Skylighting.Parser (addSyntaxDefinition, parseSyntaxDefinition)
 
 --------------------------------------------------------------------------------
 -- Pandoc-Compiler mit MathJax-Auszeichnung für Formeln
-mathCompiler :: Compiler (Item String)
-mathCompiler =
+-- und zusätzlicher Syntax für Lean-Codeblöcke (syntax/lean4.xml)
+mathCompiler :: SyntaxMap -> Compiler (Item String)
+mathCompiler syntaxMap =
     pandocCompilerWith
         defaultHakyllReaderOptions
-        defaultHakyllWriterOptions { writerHTMLMathMethod = MathJax "" }
+        defaultHakyllWriterOptions
+            { writerHTMLMathMethod = MathJax ""
+            , writerSyntaxMap      = syntaxMap
+            }
+
+-- Die Standard-Syntaxen von Pandoc plus Lean
+loadSyntaxMap :: IO SyntaxMap
+loadSyntaxMap = do
+    lean <- parseSyntaxDefinition "syntax/lean4.xml"
+    case lean of
+        Left err  -> fail ("syntax/lean4.xml: " ++ err)
+        Right syn -> return $
+            addSyntaxDefinition syn (writerSyntaxMap defaultHakyllWriterOptions)
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = do
+  syntaxMap <- loadSyntaxMap
+  hakyll $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -32,7 +49,7 @@ main = hakyll $ do
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ mathCompiler
+        compile $ mathCompiler syntaxMap
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls

@@ -1,5 +1,5 @@
 /* Importiert 'Playfair Display' und 'Lora' */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&display=swap');
 
 body {
     /* Ein sehr subtiler, warmer Gelbstich (Altpapier/Elfenbein) */
@@ -122,4 +122,82 @@ a:hover {
     /* Sicherheitshalber: Unterdrückt Standard-Rahmen */
     border: none !important;
     box-shadow: none !important;
+}
+
+
+/*
+  Code im Maschinenraum-Design:
+  Ein dunkles Pult auf dem Altpapier, gerahmt wie der Infokasten
+  (schwarze Kanten oben und unten, türkise Kante links).
+*/
+code {
+    font-family: 'JetBrains Mono', 'JuliaMono', 'DejaVu Sans Mono', monospace;
+    font-size: 0.85em;
+    font-variant-ligatures: contextual;
+}
+
+/* Inline-Code im Fließtext: dezenter türkiser Schleier */
+p code, li code, td code {
+    background-color: rgba(0, 217, 255, 0.10);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+}
+
+div.sourceCode {
+    position: relative;
+    margin: 2.5rem 0;
+    background-color: #15171c;
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    border-left: 4px solid #00d9ff;
+    box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.6);
+}
+
+pre.sourceCode {
+    margin: 0;
+    padding: 1.4rem 1.4rem 1.2rem;
+    overflow-x: auto;
+    color: #e6e1cf;
+    line-height: 1.55;
+    background: none;
+}
+
+/* Sprach-Etikett oben rechts */
+div.sourceCode::before {
+    content: "λ lean";
+    position: absolute;
+    top: 0.45rem;
+    right: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: rgba(0, 217, 255, 0.55);
+}
+div.sourceCode:not(:has(pre.lean))::before {
+    content: none;
+}
+
+/* Die unsichtbaren Zeilenanker von Pandoc nicht als Links stylen */
+pre.sourceCode a {
+    border: none;
+    background: none;
+}
+
+/* Tokens */
+code span.kw { color: #00d9ff; font-weight: 600; }        /* theorem, def, fun, by */
+code span.fu { color: #ffb454; }                          /* Taktiken */
+code span.dt { color: #c3a6ff; }                          /* Prop, Type, Sort */
+code span.cn { color: #ff8f70; }                          /* True, False */
+code span.dv { color: #ff8f70; }                          /* Zahlen */
+code span.op { color: #a8c7d8; }                          /* ¬ ∧ ↔ ⟨⟩ := => */
+code span.st { color: #b8e0a0; }                          /* Strings */
+code span.sc { color: #ffd580; }
+code span.co { color: #7d8590; font-style: italic; }      /* Kommentare, Docstrings */
+code span.pp { color: #ff7ab2; }                          /* #print, #check */
+code span.at { color: #ff7ab2; }                          /* @[simp] */
+code span.al { color: #ff5f5f; font-weight: 600; }
+
+/* Markierte Auswahl im Pult */
+pre.sourceCode ::selection {
+    background: rgba(0, 217, 255, 0.25);
 }
