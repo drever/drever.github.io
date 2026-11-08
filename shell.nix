@@ -15,4 +15,9 @@ pkgs.mkShell {
     pkgs.zlib
     pkgs.pkg-config
   ];
+
+  shellHook = ''
+      cabal run site watch --reorder-goals --max-backjumps=-1
+  '';
 }
+
