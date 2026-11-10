@@ -48,6 +48,7 @@ main = do
             >>= relativizeUrls
 
     match "posts/*" $ do
+
         route $ setExtension "html"
         compile $ mathCompiler syntaxMap
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
@@ -89,5 +90,7 @@ main = do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
+    tagsField "tags" tags `mappend`
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext

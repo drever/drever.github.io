@@ -2,7 +2,7 @@
 title: Zorn in Lean
 author: Johannes Drever (mit Claude)
 date: 2026-11-08
-tags: Kategorientheorie, Reflexivität, Zorn, Schällibaum, Lawvere, Lean, Vampire, Paradoxien, Garben
+tags: Reflexivität, Garben, "#Maschinenraun"
 description: 'Teil 2 der Lektüre von Daniel-Pascal Zorns "Vom Gebäude zum Gerüst": Formalisierung in Lean 4 und Vampire, Satz vom Widerspruch, Lügnerzyklen und eine Ironie'
 ---
 

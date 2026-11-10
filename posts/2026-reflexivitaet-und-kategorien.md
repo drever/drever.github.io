@@ -2,7 +2,7 @@
 title: Reflexivität und Kategorien
 author: Johannes Drever (mit Claude)
 date: 2026-11-05
-tags: Kategorientheorie, Reflexivität, Zorn, Schällibaum, Lawvere, Garben, Modallogik
+tags: Kategorientheorie, Reflexivität, Garben, "#Maschinenraun"
 description: Eine kategorientheoretische Lektüre des ersten Teils von Daniel-Pascal Zorns Dissertation "Vom Gebäude zum Gerüst"
 ---
 
