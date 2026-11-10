@@ -1,6 +1,5 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.Monoid (mappend)
 import           Hakyll
 
 import           Text.Pandoc.Options (WriterOptions (..), HTMLMathMethod (..))
@@ -32,7 +31,25 @@ loadSyntaxMap = do
 main :: IO ()
 main = do
   syntaxMap <- loadSyntaxMap
+
   hakyll $ do
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
+
+    -- Eine Seite pro Tag: tags/<tag>.html
+    tagsRules tags $ \tag pat -> do
+        route idRoute
+        compile $ do
+            posts <- recentFirst =<< loadAll pat
+            let tagCtx =
+                    constField "title" ("Posts tagged \"" ++ tag ++ "\"") <>
+                    listField "posts" (postCtxWithTags tags) (return posts) <>
+                    defaultContext
+
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/post-list.html" tagCtx
+                >>= loadAndApplyTemplate "templates/default.html"   tagCtx
+                >>= relativizeUrls
+
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -48,21 +65,19 @@ main = do
             >>= relativizeUrls
 
     match "posts/*" $ do
-
         route $ setExtension "html"
         compile $ mathCompiler syntaxMap
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= loadAndApplyTemplate "templates/post.html"    (postCtxWithTags tags)
+            >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
             >>= relativizeUrls
-
 
     create ["archive.html"] $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
+                    listField "posts" (postCtxWithTags tags) (return posts) <>
+                    constField "title" "Archives" <>
                     defaultContext
 
             makeItem ""
@@ -70,13 +85,12 @@ main = do
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
 
-
     match "index.html" $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
+                    listField "posts" (postCtxWithTags tags) (return posts) <>
                     defaultContext
 
             getResourceBody
@@ -86,11 +100,11 @@ main = do
 
     match "templates/*" $ compile templateBodyCompiler
 
-
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
-    tagsField "tags" tags `mappend`
-    dateField "date" "%B %e, %Y" `mappend`
+    dateField "date" "%B %e, %Y" <>
     defaultContext
+
+postCtxWithTags :: Tags -> Context String
+postCtxWithTags tags = tagsField "tags" tags <> postCtx
