@@ -57,6 +57,11 @@ jobs:
           cabal update
           cabal run site -- build
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
   deploy:
     environment:
       name: github-pages
