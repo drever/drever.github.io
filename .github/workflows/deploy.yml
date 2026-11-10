@@ -23,29 +23,39 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Cache GHC (ghcup)
+        uses: actions/cache@v4
+        with:
+          path: ~/.ghcup
+          key: ${{ runner.os }}-ghcup-9.10.3-cabal-3.12
+
       - name: Setup Haskell
+        id: setup
         uses: haskell-actions/setup@v2
         with:
           ghc-version: '9.10.3'
-          cabal-version: 'latest'
+          cabal-version: '3.12'   # feste Version statt 'latest', sonst passt der Cache-Key nicht
 
-      - name: Cache ~/.cabal/store
+      - name: Cache cabal store
         uses: actions/cache@v4
         with:
-          path: ~/.cabal/store
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/*.cabal', 'cabal.project', 'cabal.project.freeze') }}
+          path: ${{ steps.setup.outputs.cabal-store }}
+          key: ${{ runner.os }}-ghc-9.10.3-store-${{ hashFiles('**/*.cabal', 'cabal.project', 'cabal.project.freeze') }}
           restore-keys: |
-            ${{ runner.os }}-cabal-
+            ${{ runner.os }}-ghc-9.10.3-store-
+
+      - name: Cache dist-newstyle
+        uses: actions/cache@v4
+        with:
+          path: dist-newstyle
+          key: ${{ runner.os }}-ghc-9.10.3-dist-${{ hashFiles('**/*.cabal', '**/*.hs') }}
+          restore-keys: |
+            ${{ runner.os }}-ghc-9.10.3-dist-
 
       - name: Build site
         run: |
           cabal update
           cabal run site -- build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
 
   deploy:
     environment:
@@ -57,4 +67,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
